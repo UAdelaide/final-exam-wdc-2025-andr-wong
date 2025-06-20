@@ -85,7 +85,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 AVG(wrt.rating) AS average_rating
             FROM Users u
             LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id
-            LEFT JOIN Walk wa ON u.user_id = wa.walker_id
+            LEFT JOIN WalkRequests wr ON  = wa.walker_id
 
             `)
     }
