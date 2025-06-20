@@ -107,6 +107,17 @@ app.post('/logout', (req, res) => {
 
 // API endpoint to get dogs for logged-in user
 app.get('/api/users/dogs', requireLogin, async (req, res) => {
+  try {
+    const [dogs] = await db.execute(
+      'SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?',
+      [req.session.user.id]
+    );
+    res.json(dogs);
+  } catch (error) {
+    console.error('Error fetching dogs:', error);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
 
 // Export the app instead of listening here
 module.exports = app;
