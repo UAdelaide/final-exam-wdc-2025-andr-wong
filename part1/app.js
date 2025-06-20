@@ -75,6 +75,6 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 // API ROUTE: WALK REQUESTS
-
+app.get('/api/walkers/summary')
 
 module.exports = app;
