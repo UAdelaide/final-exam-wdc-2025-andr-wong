@@ -80,7 +80,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         const [walkerSummary] = await db.execeute(`
             SELECT
                 u.username AS walker_username,
-                COUNT(DISTINCT CASE WHEN wr.status = 'completed' THEN wr.request)
+                COUNT(DISTINCT CASE WHEN wr.status = 'completed' THEN wr.request_id END) AS completed_walks,
+                
             `)
     }
 })
