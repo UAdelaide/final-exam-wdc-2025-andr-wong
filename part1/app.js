@@ -35,7 +35,7 @@ let db;
         const fs = require('fs');
         const sql = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
 
-        const statements = sql.split(';').filter(stmt => stmt.trim());
+        const statements = sql.split(';').filter((stmt) => stmt.trim());
 
         for (const statement of statements) {
             if (statement.trim()) {
@@ -68,9 +68,9 @@ app.get('/api/dogs', async (req, res) => {
             `);
             res.json(dogs);
 
-    }   catch (err) {
+    } catch (err) {
         console.error('Error fetching dogs:', err);
-        res.status(500).json({error: 'Failed to fetch dogs'});
+        res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
 
