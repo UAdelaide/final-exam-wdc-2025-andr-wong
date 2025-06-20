@@ -24,6 +24,12 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 // Authentication middleware to protect dashboard pages
+function requireLogin(req, res, next) {
+  if (!req.session.user) {
+    return res.redirect('/');
+  }
+  next();
+}
 
 // Login route
 app.post('/login', async (req, res) => {
