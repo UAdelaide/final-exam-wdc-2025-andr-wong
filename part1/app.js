@@ -99,10 +99,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
             completed_walks: parseInt(walker.completed_walks)
         }));
 
-        res.json(formattedSummary);
+        res.json(walkRequests);
     } catch (err) {
         console.error('Error fetching walker summary:', err);
-        res.status(500).json({ error: 'Failed to fetch walker summary' });
+        res.status(500).json({ error: 'Failed to fetch open walk requests' });
     }
 });
 
