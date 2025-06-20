@@ -10,7 +10,8 @@ const app = express();
 app.use(session({
   secret: 'dogwalking-secret-key',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
