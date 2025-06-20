@@ -57,6 +57,8 @@ let db;
 })();
 
 // API ROUTE: DOGS
-app.get('/api/dogs', async (req, res))
+app.get('/api/dogs', async (req, res) =>{
+    try {}
+})
 
 module.exports = app;
