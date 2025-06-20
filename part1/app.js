@@ -43,7 +43,9 @@ let db;
             }
         }
 
-        await connection.end;
+        await connection.end();
+
+        db = await 
     }
 })
 
