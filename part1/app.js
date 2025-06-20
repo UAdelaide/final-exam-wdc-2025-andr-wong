@@ -20,6 +20,6 @@ app.use('/users', usersRouter);
 
 let db;
 
-
+(async)
 
 module.exports = app;
