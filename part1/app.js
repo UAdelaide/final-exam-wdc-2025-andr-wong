@@ -74,7 +74,7 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
-// API ROUTE: OPEN WAL REQUESTS
+// API ROUTE: OPEN WALK REQUESTS
 app.get('/api/walkrequests/open', async (req,res) => {
     try {
         const [walkRequests] = await db.execute(`
@@ -85,6 +85,7 @@ app.get('/api/walkrequests/open', async (req,res) => {
                 wr.duration_minutes,
                 wr.location,
                 u.username AS owner_username
+            FROM WalkRequests wr
             `)
     }
 })
