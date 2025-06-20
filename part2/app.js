@@ -42,7 +42,7 @@ app.post('/login', async (req, res) => {
 
     const user = users[0];
 
-    // Simple password check (in production, use proper hashing)
+    // Simple password check
     if (password !== user.password_hash) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
