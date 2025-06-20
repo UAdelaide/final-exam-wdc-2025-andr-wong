@@ -78,7 +78,8 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [walkerSummary] = await db.execeute(`
-            
+            SELECT
+                u.username AS walker_username,
             `)
     }
 })
