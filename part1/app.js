@@ -67,6 +67,7 @@ app.get('/api/dogs', async (req, res) => {
             ORDER BY d.name
             `);
             res.json(dogs);
+
     }   catch (err) {
         console.error('Error fetching dogs:', err);
         res.status(500).json({error: 'Failed to fetch dogs'});
