@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <h1 class="main-title">DOG OF THE DAY SERVICE WALKER ULTIMATE</h1>
-        <img alt="an image of a random dog" src="dogImage" class="dog-image">
+        <img alt="an image of a random dog" :src="dogImage" class="dog-image">
         <p class="prize-text">CLICK THE TINY DOG PICTURE ABOVE TO WIN PRIZES</p>
         <button type="button" class="tiny-button">BOOK NOW</button>
         <div class="dog-details">
@@ -17,26 +17,6 @@
             <p class="description">Age: 3 years old. Weight: 65 pounds. Very good boy. Loves walks. Available now.</p>
         </div>
     </div>
-    <script>
-        const { createApp } = Vue;
-
-        createApp({
-            data() {
-                return {
-                    dogImage: ''
-                }
-            },
-            methods: {
-                async fetchDogImage() {
-                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                    const data = await response.json();
-                    this.dogImage = data.message;
-                }
-            },
-            mounted() {
-                this.fetchDogImage();
-            }
-        }).mount('#app');
-    </script>
+    <script src="/javascripts/app.js"></script>
 </body>
 </html>
