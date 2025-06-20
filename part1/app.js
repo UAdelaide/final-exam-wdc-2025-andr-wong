@@ -33,7 +33,7 @@ let db;
         await connection.query('USE DogWalkService');
 
         const fs = require('fs');
-        const sql = fs.readFileSync
+        const sql = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'),)
     }
 })
 
