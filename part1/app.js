@@ -15,9 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 let db;
 
 (async () => {
@@ -129,5 +126,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch walker summary' });
     }
 });
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;
