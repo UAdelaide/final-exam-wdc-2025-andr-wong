@@ -75,9 +75,9 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 // API ROUTE: WALK REQUESTS
-app.get('/api/walkers/summary', async (req, res) => {
+app.get('/api/walkrequests/summary', async (req, res) => {
     try {
-        const [walkerSummary] = await db.execeute(`
+        const [walkRequests] = await db.execeute(`
             SELECT
                 u.username AS walker_username,
                 COUNT(DISTINCT CASE WHEN wr.status = 'completed' THEN wr.request_id END) AS completed_walks,
