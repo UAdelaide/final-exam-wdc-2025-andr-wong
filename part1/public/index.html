@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>DOG WALKER SERVICE ULTIMATE PREMIUM GOLD EDITION</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -17,6 +18,28 @@
             <p class="description">Age: 3 years old. Weight: 65 pounds. Very good boy. Loves walks. Available now.</p>
         </div>
     </div>
-    <script src="javascripts/app.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    dogImage: ''
+                };
+            },
+            methods: {
+                async fetchDogImage() {
+                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const data = await response.json();
+                    this.dogImage = data.message;
+                }
+            },
+            mounted() {
+                this.fetchDogImage();
+            }
+        }).mount('#app');
+
+    </script>
 </body>
+
 </html>
