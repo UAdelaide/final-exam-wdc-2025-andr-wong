@@ -79,6 +79,12 @@
 
         async function logout() {
           try {
+            await fetch('/logout', { method: 'POST' });
+            window.location.href = '/';
+          } catch (err) {
+            console.error('Logout failed:', err);
+          }
+        }
 
         onMounted(() => {
           loadWalkRequests();
