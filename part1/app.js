@@ -39,9 +39,11 @@ let db;
 
         for (const statement of statements) {
             if (statement.trim()) {
-                await
+                await connection.query(statement);
             }
         }
+
+        await connection.end;
     }
 })
 
