@@ -75,9 +75,9 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 // API ROUTE: WALK REQUESTS
-app.get('/api/walkrequests/open', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
     try {
-        const [walkRequests] = await db.execeute(`
+        const [walkerSummary] = await db.execeute(`
             SELECT
                 u.username AS walker_username,
                 COUNT(DISTINCT CASE WHEN wr.status = 'completed' THEN wr.request_id END) AS completed_walks,
@@ -90,19 +90,19 @@ app.get('/api/walkrequests/open', async (req, res) => {
             WHERE u.role = 'walker'
             GROUP BY u.user_id, u.username
             ORDER BY u.username
-            `);
+            `)
 
-        const formattedSummary = walkerSummary.map((walker) => ({
+        const formattedSummary = walkerSummary.map(walker => ({
             walker_username: walker.walker_username,
             total_ratings: parseInt(walker.total_ratings),
             average_rating: walker.average_rating ? parseFloat(walker.average_rating) : null,
             completed_walks: parseInt(walker.completed_walks)
         }));
 
-        res.json(walkRequests);
+        res.json(formattedSummary);
     } catch (err) {
         console.error('Error fetching walker summary:', err);
-        res.status(500).json({ error: 'Failed to fetch open walk request' });
+        res.status(500).json({ error: 'Failed to fetch walker summary' });
     }
 });
 
