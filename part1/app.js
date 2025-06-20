@@ -52,7 +52,7 @@ let db;
             database: 'DogWalkService'
         });
     } catch (err) {
-        console.l
+        console.error('Error setting up the database')
     }
 })
 
