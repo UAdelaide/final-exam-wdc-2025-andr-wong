@@ -41,6 +41,8 @@ app.post('/login', async (req, res) => {
     }
 
     const user = users[0];
+    console.log('Found user:', user);
+    console.log('Input password:', password);
 
     // Simple password check (in production, use proper hashing)
     if (password !== user.password_hash) {
