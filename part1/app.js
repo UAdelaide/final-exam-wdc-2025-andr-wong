@@ -32,7 +32,8 @@ let db;
         await connection.query('CREATE DATABASE DogWalkService');
         await connection.query('USE DogWalkService');
 
-        const fs = require
+        const fs = require('fs');
+        const sql = fs.readFileSync
     }
 })
 
