@@ -96,6 +96,15 @@
           }
         }
 
+        async function loadDogs() {
+          try {
+            const res = await fetch('/api/users/dogs');
+            dogs.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to load dogs';
+          }
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -133,6 +142,7 @@
 
         onMounted(() => {
           loadWalks();
+          loadDogs();
         });
 
         return {
