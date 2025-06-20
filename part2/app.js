@@ -24,7 +24,6 @@ app.use('/api/users', userRoutes);
 
 // Authentication middleware to protect dashboard pages
 function requireLogin(req, res, next) {
-  console.log('Session check:', req.session);
   if (!req.session.user) {
     return res.redirect('/');
   }
