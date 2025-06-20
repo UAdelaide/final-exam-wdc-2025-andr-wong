@@ -84,7 +84,26 @@
           dogs: []
         };
       },
+      mounted() {
+        this.fetchDogs();
+      },
       methods: {
+        async fetchDogs() {
+          try {
+            const response = await fetch('/api/dogs');
+            const dogs = await response.json();
+
+            for (let dog of dogs) {
+              const photoResponse = await fetch('https://dog.ceo/api/breeds/image/random');
+              const photoData = await photoResponse.json();
+              dog.photo = photoData.message;
+            }
+
+            this.dogs = dogs;
+          } catch (error) {
+            console.error('Error fetching dogs:', error);
+          }
+        },
         async login() {
           try {
             const response = await fetch('/login', {
