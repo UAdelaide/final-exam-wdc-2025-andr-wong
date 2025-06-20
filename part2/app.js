@@ -128,5 +128,21 @@ app.get('/api/users/me', requireLogin, (req, res) => {
   });
 });
 
+// API endpoint for all dogs (public)
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [dogs] = await db.execute(`
+      SELECT d.dog_id, d.name AS dog_name, d.size, u.username AS owner_username
+      FROM Dogs d
+      JOIN Users u ON d.owner_id = u.user_id
+      ORDER BY d.name
+    `);
+    res.json(dogs);
+  } catch (err) {
+    console.error('Error fetching dogs:', err);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
+
 // Export the app instead of listening here
 module.exports = app;
