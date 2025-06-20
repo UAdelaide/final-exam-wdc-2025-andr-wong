@@ -74,4 +74,5 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
+// API ROUTE: WALK REQUESTS
 module.exports = app;
