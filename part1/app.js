@@ -59,13 +59,13 @@ let db;
 // API ROUTE: DOGS
 app.get('/api/dogs', async (req, res) => {
     try {
-        const [dogs] = await db.execute('
+        const [dogs] = await db.execute(`
             SELECT d.name AS dog_name, d.size, u.username
             AS owner_username
             FROM Dogs d
             JOIN Users u ON d.owner_id = u.user_id
             ORDER BY d.name
-            ');
+            `);
             res.json(dogs);
     }   catch (err) {
         console.error('Error fetching dogs:', err);
