@@ -30,7 +30,7 @@ function requireLogin(req, res, next) {
   next();
 }
 
-// Protected dashboard routes
+// Protected dashboard routes. This stops a walker accessing the owner dashboard and vice versa
 app.get('/owner-dashboard.html', requireLogin, (req, res, next) => {
   if (req.session.user.role !== 'owner') {
     return res.redirect('/');
