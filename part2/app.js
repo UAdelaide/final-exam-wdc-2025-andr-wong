@@ -119,5 +119,14 @@ app.get('/api/users/dogs', requireLogin, async (req, res) => {
   }
 });
 
+// API endpoint to get current user info
+app.get('/api/users/me', requireLogin, (req, res) => {
+  res.json({
+    id: req.session.user.id,
+    username: req.session.user.username,
+    role: req.session.user.role
+  });
+});
+
 // Export the app instead of listening here
 module.exports = app;
