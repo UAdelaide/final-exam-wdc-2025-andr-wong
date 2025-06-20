@@ -92,7 +92,9 @@ app.get('/api/walkers/summary', async (req, res) => {
             ORDER BY u.username
             `)
 
-        
+        const formattedSummary = walkerSummary.map(walker => ({
+
+        }))
     }
 })
 
