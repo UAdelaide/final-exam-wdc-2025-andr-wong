@@ -38,3 +38,12 @@ a {
   font-size: 72px;
   text-align: center;
 }
+
+.description {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  font-size: 4px;
+  color: gray;
+  background: lightgray;
+}
