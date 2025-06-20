@@ -71,3 +71,6 @@ INSERT INTO Dogs (owner_id, name, size) VALUES
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+((SELECT dog_id FROM Dogs WHERE name = 'Coco' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')), '2025-06-11 07:00:00', 60, 'Glenelg', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'Shimo' AND owner_id = (SELECT user_id FROM Users WHERE username = 'johnny72')), '2025-06-12 16:45:00', 30, 'Brighton', 'completed'),
+((SELECT dog_id FROM Dogs WHERE name = 'Rufus' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')), '2025-06-13 10:15:00', 45, 'Henley', 'open');
