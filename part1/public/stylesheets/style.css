@@ -32,3 +32,9 @@ a {
   height: 3px;
   background: green;
 }
+
+.dog-details h2 {
+  color: blue;
+  font-size: 72px;
+  text-align: center;
+}
