@@ -56,5 +56,7 @@ let db;
     }
 })();
 
+// API ROUTE: DOGS
+app.get('/api/dogs')
 
 module.exports = app;
