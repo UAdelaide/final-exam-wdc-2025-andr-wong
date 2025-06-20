@@ -93,7 +93,7 @@ app.get('/api/walkrequests/open', async (req,res) => {
             `);
         res.json(walkRequests);
     } catch (err) {
-        console.error('Error fetching open walk')
+        console.error('Error fetching open walk requests:', err);
     }
 })
 
