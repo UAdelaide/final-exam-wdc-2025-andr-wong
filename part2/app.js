@@ -105,5 +105,8 @@ app.post('/logout', (req, res) => {
   });
 });
 
+// API endpoint to get dogs for logged-in user
+app.get('/api/users/dogs', requireLogin, async (req, res) => {
+
 // Export the app instead of listening here
 module.exports = app;
