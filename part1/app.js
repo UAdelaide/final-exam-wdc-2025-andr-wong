@@ -35,7 +35,7 @@ let db;
         const fs = require('fs');
         const sql = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
 
-        const statements = sql.split
+        const statements = sql.split(';').filter(stmt => stmt.trim());
     }
 })
 
