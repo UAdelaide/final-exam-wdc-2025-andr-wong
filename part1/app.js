@@ -46,7 +46,9 @@ let db;
         await connection.end();
 
         db = await mysql.createConnection({
-            host: 'localhost'
+            host: 'localhost',
+            user: 'root',
+            
         })
     }
 })
