@@ -30,7 +30,7 @@ let db;
 
         await connection.query('DROP DATABASE IF EXISTS DogWalkService');
         await connection.query('CREATE DATABASE DogWalkService');
-        await connection.query('DROP DATABASE IF EXISTS DogWalkService');
+        await connection.query('USE DATABASE IF EXISTS DogWalkService');
 
     }
 })
