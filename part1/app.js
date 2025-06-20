@@ -90,9 +90,9 @@ app.get('/api/walkers/summary', async (req, res) => {
             WHERE u.role = 'walker'
             GROUP BY u.user_id, u.username
             ORDER BY u.username
-            `)
+            `);
 
-        const formattedSummary = walkerSummary.map(walker => ({
+        const formattedSummary = walkerSummary.map((walker) => ({
             walker_username: walker.walker_username,
             total_ratings: parseInt(walker.total_ratings),
             average_rating: walker.average_rating ? parseFloat(walker.average_rating) : null,
