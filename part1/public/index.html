@@ -15,7 +15,13 @@
         createApp({
             data() {
                 return {
-                    dogImage: '',
+                    dogImage: ''
+                }
+            },
+            mounted() {
+                this.fetchDogImage();
+            }
+        }).mount('#app');
     </script>
 </body>
 </html>
