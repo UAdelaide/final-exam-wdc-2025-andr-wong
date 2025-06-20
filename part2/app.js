@@ -28,7 +28,6 @@ app.post('/login', async (req, res) => {
 
   // For now, using simple password check (not hashed)
   // In production, you would check hashed passwords
-  const db = require('./models/db');
 
   try {
     const [users] = await db.execute(
