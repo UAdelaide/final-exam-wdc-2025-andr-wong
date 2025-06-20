@@ -115,9 +115,9 @@ app.get('/api/walkers/summary', async (req, res) => {
 
         const formattedSummary = walkerSummary.map((walker) => ({
             walker_username: walker.walker_username,
-            total_ratings: parseInt(walker.total_ratings),
+            total_ratings: parseInt(walker.total_ratings, 10),
             average_rating: walker.average_rating ? parseFloat(walker.average_rating) : null,
-            completed_walks: parseInt(walker.completed_walks)
+            completed_walks: parseInt(walker.completed_walks, 10)
         }));
 
         res.json(formattedSummary);
