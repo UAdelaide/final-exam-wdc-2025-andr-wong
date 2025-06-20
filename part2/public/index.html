@@ -66,6 +66,8 @@
              <td>{{ dog.size }}</td>
              <td>{{ dog.owner_username }}</td>
              <td><img :src="dog.photo" :alt="dog.dog_name" style="width: 100px; height: 100px; object-fit: cover;"></td>
+           </tr>
+         </tbody>
         </table>
     </div>
   </div>
@@ -78,7 +80,8 @@
           message: 'Welcome to the Dog Walking Service!',
           username: '',
           password: '',
-          errorMessage: ''
+          errorMessage: '',
+          dogs: []
         };
       },
       methods: {
