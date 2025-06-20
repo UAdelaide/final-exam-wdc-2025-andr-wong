@@ -78,7 +78,7 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req,res) => {
     try {
         const [walkRequests] = await db.execute(`
-
+            SELECT
             `)
     }
 })
