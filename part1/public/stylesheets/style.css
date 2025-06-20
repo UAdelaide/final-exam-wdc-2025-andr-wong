@@ -17,3 +17,18 @@ a {
   height: 10px;
   cursor: pointer;
 }
+
+.prize-text {
+  color: yellow;
+  background: white;
+  font-size: 6px;
+}
+
+.tiny-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  background: green;
+}
