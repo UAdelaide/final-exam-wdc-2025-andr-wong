@@ -77,7 +77,7 @@ app.get('/api/dogs', async (req, res) => {
 // API ROUTE: WALK REQUESTS
 app.get('/api/walkers/summary', async (req, res) => {
     try {
-        
+        const [walkerSummary] = await db.execeute
     }
 })
 
