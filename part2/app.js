@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const db = require('./models/db');
 require('dotenv').config();
 
 const app = express();
@@ -65,9 +66,6 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Login failed' });
   }
 });
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 module.exports = app;
