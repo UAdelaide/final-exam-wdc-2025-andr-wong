@@ -39,6 +39,9 @@ app.get('/walker-dashboard.html', requireLogin, (req, res, next) => {
   next();
 });
 
+// Serve static files after authentication checks
+app.use(express.static(path.join(__dirname, '/public')));
+
 // Login route
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
