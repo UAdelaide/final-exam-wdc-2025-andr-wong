@@ -75,7 +75,7 @@ app.get('/api/dogs', async (req, res) => {
 });
 
 // API ROUTE: OPEN WAL REQUESTS
-
+app.get('/api/walkrequests/open', async (req,res) =>)
 
 // API ROUTE: WALKER SUMMARY
 app.get('/api/walkers/summary', async (req, res) => {
