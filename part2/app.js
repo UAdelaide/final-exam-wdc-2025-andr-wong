@@ -31,6 +31,15 @@ function requireLogin(req, res, next) {
   next();
 }
 
+// Protected dashboard routes
+app.get('/owner-dashboard.html', requireLogin, (req, res, next) => {
+  next();
+});
+
+app.get('/walker-dashboard.html', requireLogin, (req, res, next) => {
+  next();
+});
+
 // Login route
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
