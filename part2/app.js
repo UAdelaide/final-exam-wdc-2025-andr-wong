@@ -32,10 +32,16 @@ function requireLogin(req, res, next) {
 
 // Protected dashboard routes
 app.get('/owner-dashboard.html', requireLogin, (req, res, next) => {
+  if (req.session.user.role !== 'owner') {
+    return res.redirect('/');
+  }
   next();
 });
 
 app.get('/walker-dashboard.html', requireLogin, (req, res, next) => {
+  if (req.session.user.role !== 'walker') {
+    return res.redirect('/');
+  }
   next();
 });
 
