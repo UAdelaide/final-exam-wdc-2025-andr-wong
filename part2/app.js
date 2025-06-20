@@ -43,10 +43,9 @@ app.post('/login', async (req, res) => {
     const user = users[0];
 
     // Simple password check (in production, use proper hashing)
-    // For now, accept any password for testing
-    // if (password !== 'password123') {
-    //   return res.status(401).json({ error: 'Invalid credentials' });
-    // }
+    if (password !== user.password_hash) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
 
     // Store user in session
     req.session.user = {
