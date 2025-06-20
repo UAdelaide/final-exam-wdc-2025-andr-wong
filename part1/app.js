@@ -96,6 +96,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             walker_username: walker.walker_username,
             total_ratings: parseInt(walker.total_ratings),
             average_rating: walker.average_rating ? parseFloat(walker.average_rating) : null,
+            completed_walks: parseInt(walker.completed_walks)
         }))
     }
 })
