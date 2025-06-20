@@ -52,8 +52,8 @@ let db;
             database: 'DogWalkService'
         });
     } catch (err) {
-        console.error('Error setting up the database')
+        console.error('Error setting up the database', err);
     }
-})
+})();
 
 module.exports = app;
