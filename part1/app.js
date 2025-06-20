@@ -69,7 +69,9 @@ app.get('/api/dogs', async (req, res) =>{
             ORDER BY d.name
             ');
             res.json(dogs);
-    }   
+    }   catch (err) {
+        console.error('Error fetching dogs:', err)
+    }
 })
 
 module.exports = app;
