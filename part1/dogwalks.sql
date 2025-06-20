@@ -53,3 +53,5 @@ CREATE TABLE WalkRatings (
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );
+
+INSERT INTO Users (username, email, password_hash, role) VALUES
