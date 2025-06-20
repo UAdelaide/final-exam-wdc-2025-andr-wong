@@ -86,6 +86,7 @@ app.get('/api/walkrequests/open', async (req,res) => {
                 wr.location,
                 u.username AS owner_username
             FROM WalkRequests wr
+            JOIN Dogs d ON wr.dog_id
             `)
     }
 })
