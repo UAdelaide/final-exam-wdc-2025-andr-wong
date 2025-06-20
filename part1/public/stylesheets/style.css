@@ -6,3 +6,14 @@ body {
 a {
   color: #00B7FF;
 }
+
+.main-title {
+  color: red;
+  font-size: 8px;
+}
+
+.dog-image {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
