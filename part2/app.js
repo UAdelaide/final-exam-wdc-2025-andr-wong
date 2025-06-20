@@ -96,8 +96,13 @@ app.post('/login', async (req, res) => {
 
 // Logout route
 app.post('/logout', (req, res) => {
-  req.session.destroy();
-  res.json({ success: true });
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Could not log out' });
+    }
+    res.clearCookie('connect.sid');
+    res.json({ success: true });
+  });
 });
 
 // Export the app instead of listening here
