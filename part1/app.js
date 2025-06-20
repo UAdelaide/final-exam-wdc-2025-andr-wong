@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql2/promise');
+const fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,7 +30,6 @@ let db;
         await connection.query('CREATE DATABASE DogWalkService');
         await connection.query('USE DogWalkService');
 
-        const fs = require('fs');
         const sql = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
 
         const statements = sql.split(';').filter((stmt) => stmt.trim());
