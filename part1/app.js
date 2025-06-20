@@ -51,7 +51,9 @@ let db;
             password: '',
             database: 'DogWalkService'
         });
-    } catch ()
+    } catch (err) {
+        console.l
+    }
 })
 
 module.exports = app;
