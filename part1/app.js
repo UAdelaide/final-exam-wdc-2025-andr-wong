@@ -37,7 +37,11 @@ let db;
 
         const statements = sql.split(';').filter(stmt => stmt.trim());
 
-        for (const statement)
+        for (const statement of statements) {
+            if (statement.trim()) {
+                await
+            }
+        }
     }
 })
 
