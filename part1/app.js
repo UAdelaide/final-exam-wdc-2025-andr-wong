@@ -93,7 +93,8 @@ app.get('/api/walkers/summary', async (req, res) => {
             `)
 
         const formattedSummary = walkerSummary.map(walker => ({
-
+            walker_username: walker.walker_username,
+            total_ratings: parseI
         }))
     }
 })
