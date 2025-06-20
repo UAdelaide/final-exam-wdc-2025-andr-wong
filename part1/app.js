@@ -28,7 +28,8 @@ let db;
             password: ''
         });
 
-        await connection.query()
+        await connection.query('DROP DATABASE IF EXISTS DogWalkService');
+        
     }
 })
 
