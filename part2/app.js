@@ -132,9 +132,8 @@ app.get('/api/users/me', requireLogin, (req, res) => {
 app.get('/api/dogs', async (req, res) => {
   try {
     const [dogs] = await db.execute(`
-      SELECT d.dog_id, d.name AS dog_name, d.size, u.username AS owner_username
+      SELECT d.dog_id, d.name AS dog_name, d.size, d.owner_id
       FROM Dogs d
-      JOIN Users u ON d.owner_id = u.user_id
       ORDER BY d.name
     `);
     res.json(dogs);
