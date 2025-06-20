@@ -32,6 +32,7 @@ let db;
         await connection.query('CREATE DATABASE DogWalkService');
         await connection.query('USE DogWalkService');
 
+        const fs = require
     }
 })
 
